@@ -1,0 +1,13 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Command-line tic-tac-toe game",
+  "main": "index.js",
+  "repository": "https://github.com/viet-vo/portfolio-projects",
+  "author": "Viet Vo",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "inquirer": "^7.0.6"
+  }
+}
