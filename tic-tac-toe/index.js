@@ -70,19 +70,34 @@ const checkWin = () => {
   } else if (game[2].every(i => i !== null && i === game[2][0])) {
     console.log(game[2][0] + "'s wins");
     return true;
-  } else if (game[0][0] === i !== null && game[0][1] && game[0][1] === game[0][2]) {
+  } else if (
+    game[0][0] !== null ||
+    (game[0][0] === game[0][1] && game[0][1] === game[0][2])
+  ) {
     console.log(game[0][0] + "'s wins");
     return true;
-  } else if (game[1][0] === i !== null && game[1][0] && game[1][1] === game[1][2]) {
+  } else if (
+    game[1][0] !== null ||
+    (game[1][0] === game[1][0] && game[1][1] === game[1][2])
+  ) {
     console.log(game[1][0] + "'s wins");
     return true;
-  } else if (game[2][0] === i !== null && game[2][0] && game[2][1] === game[2][2]) {
+  } else if (
+    game[2][0] !== null ||
+    (game[2][0] === game[2][0] && game[2][1] === game[2][2])
+  ) {
     console.log(game[2][0] + "'s wins");
     return true;
-  } else if (game[0][0] === i !== null && game[1][1] && game[0][0] === game[2][2]) {
+  } else if (
+    game[0][0] !== null ||
+    (game[0][0] === game[1][1] && game[0][0] === game[2][2])
+  ) {
     console.log(game[0][0] + "'s wins");
     return true;
-  } else if (game[2][2] === i !== null && game[1][1] && game[2][2] === game[2][0]) {
+  } else if (
+    game[2][2] !== null ||
+    (game[2][2] === game[1][1] && game[2][2] === game[2][0])
+  ) {
     console.log(game[0][0] + "'s wins");
     return true;
   } else return false;
