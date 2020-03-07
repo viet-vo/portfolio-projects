@@ -30,33 +30,35 @@ const askForMove = () => {
   ]).then(choice => {
     switch (choice.choice1) {
       case "topLeft":
-        game[0][0] === "x";
+        game[0][0] = "x";
         break;
       case "topMiddle":
-        game[0][1] === "x";
+        game[0][1] = "x";
         break;
       case "topRight":
-        game[0][2] === "x";
+        game[0][2] = "x";
         break;
       case "middleLeft":
-        game[1][0] === "x";
+        game[1][0] = "x";
         break;
       case "middleMiddle":
-        game[1][1] === "x";
+        game[1][1] = "x";
         break;
       case "middleRight":
-        game[1][2] === "x";
+        game[1][2] = "x";
         break;
       case "bottomLeft":
-        game[2][0] === "x";
+        game[2][0] = "x";
         break;
       case "bottomMiddle":
-        game[2][1] === "x";
+        game[2][1] = "x";
         break;
       case "bottomRight":
-        game[2][2] === "x";
+        game[2][2] = "x";
         break;
     }
+    displayBoard();
+    checkWin();
   });
 };
 
@@ -71,31 +73,31 @@ const checkWin = () => {
     console.log(game[2][0] + "'s wins");
     return true;
   } else if (
-    game[0][0] !== null ||
+    game[0][0] !== null &&
     (game[0][0] === game[0][1] && game[0][1] === game[0][2])
   ) {
     console.log(game[0][0] + "'s wins");
     return true;
   } else if (
-    game[1][0] !== null ||
+    game[1][0] !== null &&
     (game[1][0] === game[1][0] && game[1][1] === game[1][2])
   ) {
     console.log(game[1][0] + "'s wins");
     return true;
   } else if (
-    game[2][0] !== null ||
+    game[2][0] !== null &&
     (game[2][0] === game[2][0] && game[2][1] === game[2][2])
   ) {
     console.log(game[2][0] + "'s wins");
     return true;
   } else if (
-    game[0][0] !== null ||
+    game[0][0] !== null &&
     (game[0][0] === game[1][1] && game[0][0] === game[2][2])
   ) {
     console.log(game[0][0] + "'s wins");
     return true;
   } else if (
-    game[2][2] !== null ||
+    game[2][2] !== null &&
     (game[2][2] === game[1][1] && game[2][2] === game[2][0])
   ) {
     console.log(game[0][0] + "'s wins");
@@ -109,7 +111,4 @@ const displayBoard = () => {
   console.log(game[2]);
 };
 
-do {
-  displayBoard();
-  askForMove();
-} while (checkWin() !== true);
+askForMove();
