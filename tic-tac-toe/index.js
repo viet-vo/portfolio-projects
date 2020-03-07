@@ -20,8 +20,22 @@ const askForMove = () => {
   ]).then(choice => console.log(choice.choice1));
 };
 
-console.log(game[0]);
-console.log(game[1]);
-console.log(game[2]);
+const checkWin = () => {
+  if (game[0].every(i => i !== null && i === game[0][0])) {
+    console.log(game[0][0] + "'s wins");
+  } else if (game[1].every(i => i !== null && i === game[1][0])) {
+    console.log(game[1][0] + "'s wins");
+  } else if (game[2].every(i => i !== null && i === game[2][0])) {
+    console.log(game[2][0] + "'s wins");
+  }
+};
 
-askForMove();
+const displayBoard = () => {
+  console.log(game[0]);
+  console.log(game[1]);
+  console.log(game[2]);
+};
+
+// askForMove();
+displayBoard();
+checkWin();
