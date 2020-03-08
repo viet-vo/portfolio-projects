@@ -10,7 +10,6 @@ let game = [
   [null, null, null],
   [null, null, null]
 ];
-
 let player = "x";
 
 // Recursive function that ask for player's choice until there is a winner
