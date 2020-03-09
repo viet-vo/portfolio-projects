@@ -65,6 +65,11 @@ const askForMove = () => {
     displayBoard();
     // Checks to see if there is a winner before recursive call
     // TODO There needs to be a check for a washed game
+    if (player === "x") {
+      player = "o";
+    } else {
+      player = "x";
+    }
     if (checkWin() === false) {
       askForMove();
     }
