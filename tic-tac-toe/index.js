@@ -79,48 +79,48 @@ const askForMove = () => {
 // Function that checks for a winner
 const checkWin = () => {
   if (game[0].every(i => i !== null && i === game[0][0])) {
-    console.log(game[0][0] + "'s wins SEQ1");
+    console.log(game[0][0] + "'s wins SEQ0");
     return true;
   } else if (game[1].every(i => i !== null && i === game[1][0])) {
-    console.log(game[1][0] + "'s wins SEQ2");
+    console.log(game[1][0] + "'s wins SEQ1");
     return true;
   } else if (game[2].every(i => i !== null && i === game[2][0])) {
-    console.log(game[2][0] + "'s wins SEQ3");
+    console.log(game[2][0] + "'s wins SEQ2");
     return true;
   } else if (
     game[0][0] !== null &&
     game[0][0] === game[0][1] &&
     game[0][1] === game[0][2]
   ) {
-    console.log(game[0][0] + "'s wins SEQ4");
+    console.log(game[0][0] + "'s wins SEQ3");
     return true;
   } else if (
     game[1][0] !== null &&
     game[1][0] === game[1][0] &&
     game[1][1] === game[1][2]
   ) {
-    console.log(game[1][0] + "'s wins SEQ5");
+    console.log(game[1][0] + "'s wins SEQ4");
     return true;
   } else if (
     game[2][0] !== null &&
     game[2][0] === game[2][0] &&
     game[2][1] === game[2][2]
   ) {
-    console.log(game[2][0] + "'s wins SEQ6");
+    console.log(game[2][0] + "'s wins SEQ5");
     return true;
   } else if (
     game[0][0] !== null &&
     game[0][0] === game[1][1] &&
     game[0][0] === game[2][2]
   ) {
-    console.log(game[0][0] + "'s wins SEQ7");
+    console.log(game[0][0] + "'s wins SEQ6");
     return true;
   } else if (
     game[2][2] !== null &&
     game[2][2] === game[1][1] &&
     game[2][2] === game[2][0]
   ) {
-    console.log(game[0][0] + "'s wins SEQ8");
+    console.log(game[0][0] + "'s wins SEQ7");
     return true;
   } else return false;
 };
