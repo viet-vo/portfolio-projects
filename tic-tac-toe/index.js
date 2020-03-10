@@ -89,36 +89,36 @@ const checkWin = () => {
     return true;
   } else if (
     game[0][0] !== null &&
-    game[0][0] === game[0][1] &&
-    game[0][1] === game[0][2]
+    game[0][0] === game[1][0] &&
+    game[1][0] === game[2][0]
   ) {
     console.log(game[0][0] + "'s wins SEQ3");
     return true;
   } else if (
-    game[1][0] !== null &&
-    game[1][0] === game[1][0] &&
-    game[1][1] === game[1][2]
+    game[0][1] !== null &&
+    game[0][1] === game[1][1] &&
+    game[1][1] === game[2][1]
   ) {
     console.log(game[1][0] + "'s wins SEQ4");
     return true;
   } else if (
-    game[2][0] !== null &&
-    game[2][0] === game[2][0] &&
-    game[2][1] === game[2][2]
+    game[0][2] !== null &&
+    game[0][2] === game[1][2] &&
+    game[1][2] === game[2][2]
   ) {
     console.log(game[2][0] + "'s wins SEQ5");
     return true;
   } else if (
     game[0][0] !== null &&
     game[0][0] === game[1][1] &&
-    game[0][0] === game[2][2]
+    game[1][1] === game[2][2]
   ) {
     console.log(game[0][0] + "'s wins SEQ6");
     return true;
   } else if (
-    game[2][2] !== null &&
-    game[2][2] === game[1][1] &&
-    game[2][2] === game[2][0]
+    game[0][2] !== null &&
+    game[0][2] === game[1][1] &&
+    game[1][1] === game[2][0]
   ) {
     console.log(game[0][0] + "'s wins SEQ7");
     return true;
