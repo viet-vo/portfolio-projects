@@ -11,7 +11,7 @@ let game = [
   ["7", "8", "9"]
 ];
 let choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-let player = "x";
+let player = "X";
 
 // Recursive function that ask for player's choice until there is a winner
 const askForMove = () => {
@@ -20,54 +20,54 @@ const askForMove = () => {
       type: "list",
       name: "choice1",
       message: "Choose between: ",
-      choices: choices
+      choices: choices.filter(x => x !== null)
     }
   ]).then(choice => {
     switch (choice.choice1) {
       case "1":
         game[0][0] = player;
-        choices.splice(0, 1);
+        choices[0] = null;
         break;
       case "2":
         game[0][1] = player;
-        choices.splice(1, 1);
+        choices[1] = null;
         break;
       case "3":
         game[0][2] = player;
-        choices.splice(2, 1);
+        choices[2] = null;
         break;
       case "4":
         game[1][0] = player;
-        choices.splice(3, 1);
+        choices[3] = null;
         break;
       case "5":
         game[1][1] = player;
-        choices.splice(4, 1);
+        choices[4] = null;
         break;
       case "6":
         game[1][2] = player;
-        choices.splice(5, 1);
+        choices[5] = null;
         break;
       case "7":
         game[2][0] = player;
-        choices.splice(6, 1);
+        choices[6] = null;
         break;
       case "8":
         game[2][1] = player;
-        choices.splice(7, 1);
+        choices[7] = null;
         break;
       case "9":
         game[2][2] = player;
-        choices.splice(8, 1);
+        choices[8] = null;
         break;
     }
     displayBoard();
     // Checks to see if there is a winner before recursive call
     // TODO There needs to be a check for a washed game
-    if (player === "x") {
-      player = "o";
+    if (player === "X") {
+      player = "O";
     } else {
-      player = "x";
+      player = "X";
     }
     if (checkWin() === false) {
       askForMove();
@@ -121,6 +121,8 @@ const checkWin = () => {
   ) {
     console.log(game[0][0] + "'s wins SEQ7");
     return true;
+  } else if (choices.every(i => i === null)) {
+    console.log("Tie game! SEQ8");
   } else return false;
 };
 
