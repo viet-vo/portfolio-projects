@@ -6,10 +6,11 @@ const prompt = inquirer.createPromptModule();
 
 // Game and player variable
 let game = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null]
+  ["1", "2", "3"],
+  ["4", "5", "6"],
+  ["7", "8", "9"]
 ];
+let choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let player = "x";
 
 // Recursive function that ask for player's choice until there is a winner
@@ -19,47 +20,45 @@ const askForMove = () => {
       type: "list",
       name: "choice1",
       message: "Choose between: ",
-      // TODO Need to remove choices after they are chosen
-      choices: [
-        "topLeft",
-        "topMiddle",
-        "topRight",
-        "middleLeft",
-        "middleMiddle",
-        "middleRight",
-        "bottomLeft",
-        "bottomMiddle",
-        "bottomRight"
-      ]
+      choices: choices
     }
   ]).then(choice => {
     switch (choice.choice1) {
-      case "topLeft":
+      case "1":
         game[0][0] = player;
+        choices.splice(0, 1);
         break;
-      case "topMiddle":
+      case "2":
         game[0][1] = player;
+        choices.splice(1, 1);
         break;
-      case "topRight":
+      case "3":
         game[0][2] = player;
+        choices.splice(2, 1);
         break;
-      case "middleLeft":
+      case "4":
         game[1][0] = player;
+        choices.splice(3, 1);
         break;
-      case "middleMiddle":
+      case "5":
         game[1][1] = player;
+        choices.splice(4, 1);
         break;
-      case "middleRight":
+      case "6":
         game[1][2] = player;
+        choices.splice(5, 1);
         break;
-      case "bottomLeft":
+      case "7":
         game[2][0] = player;
+        choices.splice(6, 1);
         break;
-      case "bottomMiddle":
+      case "8":
         game[2][1] = player;
+        choices.splice(7, 1);
         break;
-      case "bottomRight":
+      case "9":
         game[2][2] = player;
+        choices.splice(8, 1);
         break;
     }
     displayBoard();
@@ -132,5 +131,6 @@ const displayBoard = () => {
   console.log(game[2]);
 };
 
-// Runs the function that ask for a players move.
+// Runs the function displayin initial board recursively ask for a players move until end of game.
+displayBoard();
 askForMove();
