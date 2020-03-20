@@ -11,7 +11,7 @@ amqp.connect("amqp://localhost", function(error0, connection) {
     var exchange = "logs";
     var msg = process.argv.slice(2).join(" ") || "Hello World!";
 
-    channel.assertExchange(exchange, "fanout", {
+    channel.assertExchange(exchange, "testChannel", {
       durable: false
     });
     channel.publish(exchange, "", Buffer.from(msg));
