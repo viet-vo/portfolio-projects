@@ -9,7 +9,7 @@ amqp.connect("amqp://" + process.env.RABBITMQ, function(error0, connection) {
     if (error1) {
       throw error1;
     }
-    var exchange = "logs";
+    var exchange = "channel1"; //This is the channel ID
 
     channel.assertExchange(exchange, "fanout", {
       durable: false

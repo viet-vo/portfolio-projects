@@ -8,10 +8,10 @@ amqp.connect("amqp://localhost", function(error0, connection) {
     if (error1) {
       throw error1;
     }
-    var exchange = "logs";
-    var msg = process.argv.slice(2).join(" ") || "Hello World!";
+    var exchange = "channel1"; //This is the channel ID
+    var msg = process.argv.slice(2).join(" ") || "Hello World!111111";
 
-    channel.assertExchange(exchange, "testChannel", {
+    channel.assertExchange(exchange, "fanout", {
       durable: false
     });
     channel.publish(exchange, "", Buffer.from(msg));
