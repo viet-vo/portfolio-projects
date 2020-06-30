@@ -6,7 +6,7 @@ pub.on("error", function (error) {
 });
 
 pub.publish(
-  "test" /* This is the channel */,
+  "public" /* This is the channel */,
   "This is the test message 1" /* This is the message */,
   function () {
     console.log("published w/ no issue");

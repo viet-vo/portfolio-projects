@@ -1,10 +1,12 @@
+// jQuery
 $(document).ready(function () {
+  // $.ajax({method: "POST", url: "/connect"})
   $("button").click(function () {
     console.log("test");
     $.ajax({
       method: "POST",
-      url: "http://localhost:3000/",
-      data: {message: "test post send"}
+      url: "/",
+      data: { message: $("input#textMessage").val() },
     }).then((res) => console.log(res));
   });
 });
