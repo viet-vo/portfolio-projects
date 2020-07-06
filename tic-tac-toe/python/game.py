@@ -10,7 +10,15 @@ __license__ = "MIT"
 
 def main():
     """ Main entry point of the app """
-    print("hello world")
+
+
+row1 = [1, 2, 3]
+row2 = [4, 5, 6]
+row3 = [7, 8, 9]
+board = [row1, row2, row3]
+
+print("hello world")
+print(board)
 
 
 if __name__ == "__main__":
