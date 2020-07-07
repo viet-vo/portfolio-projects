@@ -8,7 +8,7 @@ const prompt = inquirer.createPromptModule();
 let game = [
   ["1", "2", "3"],
   ["4", "5", "6"],
-  ["7", "8", "9"]
+  ["7", "8", "9"],
 ];
 let choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let player = "X";
@@ -20,9 +20,9 @@ const askForMove = () => {
       type: "list",
       name: "choice1",
       message: "Choose between: ",
-      choices: choices.filter(x => x !== null)
-    }
-  ]).then(choice => {
+      choices: choices.filter((x) => x !== null),
+    },
+  ]).then((choice) => {
     switch (choice.choice1) {
       case "1":
         game[0][0] = player;
@@ -77,13 +77,13 @@ const askForMove = () => {
 
 // Function that checks for a winner
 const checkWin = () => {
-  if (game[0].every(i => i !== null && i === game[0][0])) {
+  if (game[0].every((i) => i !== null && i === game[0][0])) {
     console.log(game[0][0] + "'s wins SEQ0");
     return true;
-  } else if (game[1].every(i => i !== null && i === game[1][0])) {
+  } else if (game[1].every((i) => i !== null && i === game[1][0])) {
     console.log(game[1][0] + "'s wins SEQ1");
     return true;
-  } else if (game[2].every(i => i !== null && i === game[2][0])) {
+  } else if (game[2].every((i) => i !== null && i === game[2][0])) {
     console.log(game[2][0] + "'s wins SEQ2");
     return true;
   } else if (
@@ -121,7 +121,7 @@ const checkWin = () => {
   ) {
     console.log(game[0][0] + "'s wins SEQ7");
     return true;
-  } else if (choices.every(i => i === null)) {
+  } else if (choices.every((i) => i === null)) {
     console.log("Tie game! SEQ8");
   } else return false;
 };
